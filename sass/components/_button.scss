@@ -1,0 +1,17 @@
+.btn {
+    &,
+    &:link,
+    &:visited {
+        display: inline-block;
+        text-decoration: none;
+        font-size: 1.7rem;
+        padding: 1rem 2rem;
+        border-radius: 3px;
+    }
+
+    // &--cyan {
+    //     border: 2px solid $color-secondry;
+    //     background-color: $color-secondry;
+    //     color: $color-white;
+    // }
+}
