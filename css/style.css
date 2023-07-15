@@ -1,0 +1,151 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+ORDER: Base + typography > general layout + grid > page layout > components
+1em = 16px
+*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box;
+  background-color: #937654;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden; }
+
+::selection {
+  background-color: #000;
+  color: #fff; }
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400; }
+
+.heading-primary {
+  display: inline-block;
+  font-size: 5rem; }
+
+.heading-secondry {
+  display: inline-block;
+  font-size: 3.5rem; }
+
+.heading-tertiary {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 700; }
+
+.paragraph {
+  font-size: 2rem;
+  word-spacing: 0.1rem; }
+
+.u-center-text {
+  text-align: center; }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 2rem; }
+
+.u-margin-bottom-large {
+  margin-bottom: 5rem; }
+
+.u-margin-top-small {
+  margin-top: 1.5rem; }
+
+.u-margin-top-medium {
+  margin-top: 2rem; }
+
+.u-margin-top-large {
+  margin-top: 5rem; }
+
+.u-margin-right-small {
+  margin-right: 1.5rem; }
+
+.btn, .btn:link, .btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.7rem;
+  padding: 1rem 2rem;
+  border-radius: 3px; }
+
+#moka-pot {
+  transform-origin: 50% 50%;
+  transition: all 0.5s ease-in-out; }
+
+svg:hover,
+svg:active #moka-pot {
+  transform: rotate(50deg) translate(-2rem, 3rem); }
+
+#lid {
+  transform-origin: 60% 64%;
+  transform: rotate(0deg);
+  transition: all 0.5s ease-in-out; }
+
+#cup {
+  transform: scale(0.5) translateY(35rem) translateX(36rem); }
+
+svg:hover,
+svg:active #lid {
+  transform: rotate(-90deg); }
+
+#coffee {
+  transform: rotateX(90deg) scale(0.4);
+  transition: all 3s ease-in-out;
+  transition-delay: 0.3s; }
+
+#g8 {
+  transform: rotateX(180deg);
+  transform-origin: 50% 50%; }
+  @media (max-width: 48em) {
+    #g8 {
+      transform: rotateX(180deg) scale(1.5) translateX(17px); } }
+  @media (max-height: 28.75em) {
+    #g8 {
+      transform: rotateX(180deg) scale(2.1) translateX(17px); } }
+
+svg:hover,
+svg:active #coffee {
+  transform: rotateX(0deg) scale(1); }
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc( 2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc( 2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc( 3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
